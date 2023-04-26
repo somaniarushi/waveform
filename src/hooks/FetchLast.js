@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+
+
 const USERNAME = "amksomani";
 const API_KEY = "80f6445a8f5cb6abcde40082838af940";
 
@@ -15,6 +17,7 @@ function useFetchLast(count, list, setList) {
         }
         )));
       });
+      // eslint-disable-next-line
   }, [count]);
 }
 
@@ -35,6 +38,7 @@ function useFetchFrequencies(days, list, setList) {
                     });
         }
         setList(totalFrequencies);
+        // eslint-disable-next-line
     }, [days]);
 }
 

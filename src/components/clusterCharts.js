@@ -79,7 +79,7 @@ function ClusterChartForTopHundred({ listOfTopHundred }) {
   );
 }
 
-function ClusterChartForFrequencies({ listOfFrequencies, count }) {
+function BarChartForFrequencies({ listOfFrequencies, count }) {
     // Frequency count is a list of numbers
     // Create a scatter plot where the x axis is the days and y axis is the frequency
 
@@ -153,4 +153,4 @@ function ClusterChartForFrequencies({ listOfFrequencies, count }) {
 }
 
 
-export { ClusterChartForTopHundred, ClusterChartForFrequencies };
+export { ClusterChartForTopHundred };
