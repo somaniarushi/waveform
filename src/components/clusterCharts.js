@@ -79,6 +79,7 @@ function ClusterChartForTopHundred({ listOfTopHundred }) {
   );
 }
 
+//eslint-disable-next-line
 function BarChartForFrequencies({ listOfFrequencies, count }) {
     // Frequency count is a list of numbers
     // Create a scatter plot where the x axis is the days and y axis is the frequency
