@@ -20,16 +20,6 @@ import { TopTenArtistsBarChart, TopTenTracksBarChart, BarChartForFrequencies } f
 import { LastTenList, TopTenList } from './components/listCharts';
 import { ClusterChartForTopHundred } from './components/clusterCharts';
 
-const mainBoxStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    paddingLeft: '200px',
-    paddingRight: '200px',
-    paddingTop: '0',
-    maxWidth: '100vw'
-}
-
 // Register point
 ChartJS.register(
   CategoryScale,
@@ -62,16 +52,26 @@ function App() {
   useFetchFrequencies(count, listOfFrequencies, setListOfFrequencies);
 
 
-  return (
-    <>
-      <PageTitle />
-      <Box sx={mainBoxStyle}>
-        <ClusterChartForTopHundred listOfTopHundred={listofTopHundredTracks} />
+    /*
+    Display the folllowing charts below:
+    <ClusterChartForTopHundred listOfTopHundred={listofTopHundredTracks} />
         <TopTenTracksBarChart listOfTopTen={listOfTopTenTracks} />
         <TopTenArtistsBarChart listOfTopTen={listOfTopTenArtists} />
         <LastTenList listOfLastTen={listOfLastTen} />
         <TopTenList listOfTopTen={listOfTopTenTracks} />
+        <BarChartForFrequencies listOfFrequencies={listOfFrequencies} count={count}/> */
+
+  return (
+    <>
+      <PageTitle />
+      {/* Organize all the charts in a grid of 2 elements per row */}
+      <Box style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '20px', paddingLeft: '200px', paddingRight: '200px'}}>
+        <TopTenTracksBarChart listOfTopTen={listOfTopTenTracks} />
+        <TopTenArtistsBarChart listOfTopTen={listOfTopTenArtists} />
+        <ClusterChartForTopHundred listOfTopHundred={listofTopHundredTracks} />
         <BarChartForFrequencies listOfFrequencies={listOfFrequencies} count={count}/>
+        <LastTenList listOfLastTen={listOfLastTen} />
+        <TopTenList listOfTopTen={listOfTopTenTracks} />
       </Box>
     </>
   );
