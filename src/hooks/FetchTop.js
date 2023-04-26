@@ -35,7 +35,7 @@ function useFetchTop(count, list, setList, property) {
           );
         });
     }
-  }, [count, list, setList, property]);
+  }, [count, property]);
 }
 
 export { useFetchTop };

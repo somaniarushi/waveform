@@ -12,11 +12,11 @@ import {
   PointElement,
   LineElement
 } from 'chart.js';
-import { useFetchLast } from './hooks/FetchLast';
+import { useFetchLast, useFetchFrequencies } from './hooks/FetchLast';
 import { useFetchTop } from './hooks/FetchTop';
 
 import PageTitle from './components/PageTitle';
-import { TopTenArtistsBarChart, TopTenTracksBarChart } from './components/barCharts';
+import { TopTenArtistsBarChart, TopTenTracksBarChart, BarChartForFrequencies } from './components/barCharts';
 import { LastTenList, TopTenList } from './components/listCharts';
 import { ClusterChartForTopHundred } from './components/clusterCharts';
 
@@ -57,6 +57,10 @@ function App() {
   const [listOfTopTenTracks, setListOfTopTenTracks] = useState([]);
   useFetchTop(10, listOfTopTenTracks, setListOfTopTenTracks, "Track");
 
+  const [listOfFrequencies, setListOfFrequencies] = useState([]);
+  const count = 20;
+  useFetchFrequencies(count, listOfFrequencies, setListOfFrequencies);
+
 
   return (
     <>
@@ -67,6 +71,7 @@ function App() {
         <TopTenArtistsBarChart listOfTopTen={listOfTopTenArtists} />
         <LastTenList listOfLastTen={listOfLastTen} />
         <TopTenList listOfTopTen={listOfTopTenTracks} />
+        <BarChartForFrequencies listOfFrequencies={listOfFrequencies} count={count}/>
       </Box>
     </>
   );
