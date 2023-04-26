@@ -1,9 +1,4 @@
 import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
   Typography,
   Box,
 } from "@mui/material";

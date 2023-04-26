@@ -1,6 +1,6 @@
 import './breezy.css';
-import { useEffect, useState } from 'react';
-import { Table, TableHead, TableBody, TableRow, TableCell, Typography, Box } from '@mui/material';
+import { useState } from 'react';
+import { Box } from '@mui/material';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,7 +12,6 @@ import {
   PointElement,
   LineElement
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
 import { useFetchLast } from './hooks/FetchLast';
 import { useFetchTop } from './hooks/FetchTop';
 
@@ -20,10 +19,6 @@ import PageTitle from './components/PageTitle';
 import { TopTenArtistsBarChart, TopTenTracksBarChart } from './components/barCharts';
 import { LastTenList, TopTenList } from './components/listCharts';
 import { ClusterChartForTopHundred } from './components/clusterCharts';
-
-const globalStyles = {
-  fontFamily: '"Saira", sans-serif'
-}
 
 const mainBoxStyle = {
     display: 'flex',
