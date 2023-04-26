@@ -24,8 +24,8 @@ const mainBoxStyle = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    paddingLeft: '500px',
-    paddingRight: '500px',
+    paddingLeft: '200px',
+    paddingRight: '200px',
     paddingTop: '0',
     maxWidth: '100vw'
 }
